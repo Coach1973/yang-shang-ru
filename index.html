@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.className += ' js';</script>
+<title>楊尚儒 Shang-Ju Yang, D.M.A.｜小提琴・中提琴・弦樂團訓練｜台南</title>
+<meta name="description" content="楊尚儒（Shang-Ju Yang, D.M.A.），小提琴與中提琴演奏者、弦樂教育者，現居台南。亞利桑那大學音樂藝術博士；曾任 Sierra Vista Symphony Orchestra 協理首席、藝曲愛樂管弦樂團首席（2012–2019）。專注於樂團組建、室內樂訓練與弦樂主修教學。">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="楊尚儒 Shang-Ju Yang, D.M.A.">
+<meta property="og:description" content="小提琴・中提琴演奏者，弦樂教育者。組建與訓練樂團，培養下一代弦樂演奏者。">
+<meta property="og:type" content="profile">
+<meta property="og:image" content="assets/hero-stage.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* ─────────────────────────────────────────────
+   Tokens
+   ───────────────────────────────────────────── */
+:root{
+  --bg:#0E0F11;
+  --bg-deep:#08090A;
+  --surface:#16171A;
+  --fg:#EDE8DF;
+  --muted:#9A968D;
+  --border:rgba(237,232,223,0.10);
+  --border-hi:rgba(237,232,223,0.22);
+  --accent:#C8A253;
+  --accent-dim:#8C7237;
+
+  --serif:'Cormorant Garamond','Noto Serif TC',Georgia,'Times New Roman',serif;
+  --serif-tc:'Noto Serif TC','Cormorant Garamond',Georgia,serif;
+  --sans:'Noto Sans TC','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+
+  --gutter:clamp(20px,5vw,64px);
+  --maxw:1180px;
+  --rhythm:clamp(88px,11vw,168px);
+  --ease:cubic-bezier(0.16,1,0.3,1);
+}
+
+/* ─────────────────────────────────────────────
+   Reset
+   ───────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:auto}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:var(--sans);
+  font-size:17px;
+  font-weight:400;
+  line-height:1.75;
+  letter-spacing:0.01em;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3,h4,p,figure,blockquote,ul,ol{margin:0}
+ul,ol{list-style:none;padding:0}
+a{color:inherit}
+
+/* Focus — never removed, always replaced */
+:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  border-radius:1px;
+}
+a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
+
+::selection{background:rgba(200,162,83,0.28);color:var(--fg)}
+
+.skip{
+  position:absolute;left:var(--gutter);top:-100px;z-index:200;
+  background:var(--surface);color:var(--fg);
+  padding:12px 18px;border:1px solid var(--border-hi);
+  font-family:var(--mono);font-size:12px;
+  transition:top 180ms var(--ease);
+}
+.skip:focus{top:14px}
+
+/* ─────────────────────────────────────────────
+   Shared primitives
+   ───────────────────────────────────────────── */
+.wrap{
+  width:100%;max-width:var(--maxw);
+  margin-inline:auto;
+  padding-inline:var(--gutter);
+}
+section{position:relative;overflow:hidden;overflow:clip}
+
+.mono{
+  font-family:var(--mono);
+  font-size:12px;
+  font-weight:400;
+  line-height:1.6;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+}
+.caps{letter-spacing:0.09em;text-transform:uppercase}
+
+/* Movement header: Roman numeral + Italian tempo marking */
+.movement{
+  display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;
+  padding-bottom:20px;
+  margin-bottom:clamp(28px,4vw,48px);
+  border-bottom:1px solid var(--border);
+}
+.mv-num{
+  font-family:var(--mono);
+  font-size:12px;font-weight:500;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--fg);
+}
+.mv-tempo{
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:400;
+  font-size:19px;
+  letter-spacing:0.01em;
+  color:var(--muted);
+}
+
+/* The enormous, very low-contrast ghost numeral */
+.ghost{
+  position:absolute;
+  z-index:0;
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(230px,40vw,600px);
+  line-height:0.72;
+  letter-spacing:-0.03em;
+  color:rgba(237,232,223,0.035);
+  pointer-events:none;
+  user-select:none;
+  white-space:nowrap;
+}
+.ghost--r{right:-0.12em;top:8%}
+.ghost--l{left:-0.14em;top:14%}
+.ghost--rb{right:-0.10em;bottom:-0.10em}
+
+/* Five-line staff motif — the recurring divider */
+.staff{
+  height:25px;
+  margin-inline:auto;
+  max-width:var(--maxw);
+  width:calc(100% - var(--gutter) * 2);
+  background:repeating-linear-gradient(
+    to bottom,
+    var(--border) 0 1px,
+    transparent 1px 6px
+  );
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 18%,#000 82%,transparent);
+  mask-image:linear-gradient(to right,transparent,#000 18%,#000 82%,transparent);
+}
+
+.prose{max-width:38em}
+.prose p{margin-bottom:1.35em;color:#DCD6CB;line-height:1.75}
+.prose p:last-child{margin-bottom:0}
+.prose strong{font-weight:500;color:var(--fg)}
+
+h2{
+  font-family:var(--serif-tc);
+  font-weight:400;
+  font-size:clamp(29px,3.6vw,42px);
+  line-height:1.26;
+  letter-spacing:-0.018em;
+  margin-bottom:clamp(20px,2.6vw,30px);
+}
+h2 .lat{font-family:var(--serif);letter-spacing:-0.01em}
+h3{
+  font-family:var(--serif-tc);
+  font-weight:400;
+  font-size:20px;
+  line-height:1.45;
+  letter-spacing:0;
+}
+
+/* Primary call to action — the one micro-interaction:
+   a brass hairline that draws itself under the label. */
+.cta{
+  --pad:26px;
+  position:relative;
+  display:inline-flex;align-items:center;gap:14px;
+  padding:17px var(--pad) 19px;
+  border:1px solid var(--accent-dim);
+  color:var(--accent);
+  background:transparent;
+  font-family:var(--sans);
+  font-size:16px;font-weight:500;letter-spacing:0.05em;
+  text-decoration:none;
+  transition:border-color 320ms var(--ease),transform 320ms var(--ease);
+}
+.cta .arw{
+  font-family:var(--mono);font-size:12px;letter-spacing:0.12em;
+  transform:translateY(-1px);
+}
+.cta::after{
+  content:"";
+  position:absolute;left:var(--pad);right:var(--pad);bottom:13px;
+  height:1px;background:var(--accent);
+  transform:scaleX(0);transform-origin:left center;
+  transition:transform 560ms var(--ease);
+}
+.cta:hover,.cta:focus-visible{border-color:var(--accent);transform:translateY(-1px)}
+.cta:hover::after,.cta:focus-visible::after{transform:scaleX(1)}
+
+.link-quiet{
+  color:var(--fg);
+  text-decoration:none;
+  border-bottom:1px solid var(--border-hi);
+  padding-bottom:2px;
+  transition:border-color 260ms var(--ease),color 260ms var(--ease);
+}
+.link-quiet:hover{border-color:var(--fg)}
+
+/* ─────────────────────────────────────────────
+   Header / nav
+   ───────────────────────────────────────────── */
+.site-head{
+  position:sticky;top:0;z-index:100;
+  background:rgba(14,15,17,0.78);
+  backdrop-filter:blur(14px) saturate(120%);
+  -webkit-backdrop-filter:blur(14px) saturate(120%);
+  border-bottom:1px solid var(--border);
+}
+.head-in{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  height:62px;
+}
+.wordmark{
+  display:flex;align-items:baseline;gap:11px;
+  text-decoration:none;color:var(--fg);
+}
+.wordmark b{font-family:var(--serif-tc);font-weight:400;font-size:18px;letter-spacing:0.04em}
+.wordmark span{
+  font-family:var(--mono);font-size:10px;font-weight:400;
+  letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);
+}
+.site-nav ul{display:flex;align-items:center;gap:clamp(14px,2.2vw,30px)}
+.site-nav a{
+  font-family:var(--mono);font-size:11px;font-weight:400;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;
+  padding:6px 0;
+  transition:color 240ms var(--ease);
+}
+.site-nav a:hover{color:var(--fg)}
+.site-nav .nav-cta{
+  color:var(--fg);
+  border:1px solid var(--border-hi);
+  padding:8px 15px;
+  transition:border-color 240ms var(--ease);
+}
+.site-nav .nav-cta:hover{border-color:var(--fg)}
+
+/* ─────────────────────────────────────────────
+   I. Overture — hero
+   ───────────────────────────────────────────── */
+.hero{
+  position:relative;
+  min-height:calc(100svh - 62px);
+  display:flex;align-items:flex-end;
+  padding-block:clamp(120px,18vh,220px) clamp(52px,8vh,88px);
+  border-bottom:1px solid var(--accent-dim);
+}
+.hero-media{position:absolute;inset:0;z-index:0}
+.hero-media img{
+  width:100%;height:100%;object-fit:cover;object-position:52% 62%;
+}
+/* deep vignette — the stage before the downbeat */
+.hero-media::after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(120% 88% at 22% 72%,rgba(14,15,17,0.18) 0%,rgba(14,15,17,0.72) 52%,rgba(8,9,10,0.96) 100%),
+    linear-gradient(to top,rgba(8,9,10,0.97) 0%,rgba(14,15,17,0.55) 42%,rgba(14,15,17,0.62) 100%);
+}
+.hero .wrap{position:relative;z-index:1;width:100%}
+.hero-eyebrow{
+  display:flex;align-items:baseline;gap:15px;flex-wrap:wrap;
+  margin-bottom:clamp(24px,4vh,44px);
+}
+.hero-eyebrow .mv-num{color:var(--muted)}
+h1{
+  font-family:var(--serif-tc);
+  font-weight:300;
+  font-size:clamp(56px,12vw,124px);
+  line-height:1.02;
+  letter-spacing:-0.025em;
+  margin-bottom:18px;
+}
+.hero-latin{
+  font-family:var(--mono);
+  font-size:clamp(11px,1.5vw,13px);
+  font-weight:500;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--fg);
+  margin-bottom:26px;
+}
+.hero-roles{
+  font-family:var(--serif-tc);
+  font-weight:300;
+  font-size:clamp(17px,2.3vw,23px);
+  line-height:1.6;
+  letter-spacing:0.02em;
+  color:#DCD6CB;
+  margin-bottom:22px;
+}
+.hero-line{
+  max-width:34em;
+  color:var(--muted);
+  font-size:16px;
+  margin-bottom:clamp(34px,5vh,52px);
+}
+.hero-actions{display:flex;align-items:center;gap:clamp(18px,3vw,34px);flex-wrap:wrap}
+
+/* the figure on the dark stage — real photograph, cut out, dissolving at the hem */
+.hero-figure{
+  position:absolute;z-index:1;margin:0;pointer-events:none;
+  right:clamp(0px,3vw,76px);bottom:0;
+  width:clamp(200px,24vw,352px);
+}
+.hero-figure img{
+  display:block;width:100%;height:auto;
+  filter:drop-shadow(0 26px 74px rgba(8,9,10,0.94)) saturate(0.92) contrast(1.03);
+}
+/* tablet: keep him on stage, but clear a lane for the type */
+@media (max-width:1000px) and (min-width:701px){
+  .hero .wrap{padding-right:clamp(178px,26vw,250px)}
+  .hero-figure{width:clamp(158px,23vw,210px);right:clamp(0px,2vw,26px)}
+}
+@media (max-width:700px){.hero-figure{display:none}}
+
+/* the name entering as if lit */
+.lit{animation:lit 1500ms var(--ease) 120ms both}
+.lit-2{animation:lit 1500ms var(--ease) 320ms both}
+.lit-3{animation:lit 1500ms var(--ease) 470ms both}
+.lit-4{animation:lit 1500ms var(--ease) 600ms both}
+@keyframes lit{
+  from{opacity:0;transform:translateY(12px);filter:brightness(0.35)}
+  to{opacity:1;transform:none;filter:brightness(1)}
+}
+
+/* ─────────────────────────────────────────────
+   II. Positioning bar
+   ───────────────────────────────────────────── */
+.bar{background:var(--bg-deep);border-bottom:1px solid var(--border)}
+.bar .wrap{padding-block:clamp(34px,5vw,52px)}
+.bar-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);
+}
+.bar-cell{background:var(--bg-deep);padding:22px clamp(16px,2.2vw,28px)}
+.bar-cell dt{
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--fg);margin-bottom:9px;
+}
+.bar-cell dd{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+.bar-cell dd .en{font-family:var(--serif);font-size:16px;letter-spacing:0.01em}
+.bar-note{
+  margin-top:18px;color:var(--muted);font-size:13px;letter-spacing:0.02em;
+}
+
+/* ─────────────────────────────────────────────
+   III. Biography — asymmetric
+   ───────────────────────────────────────────── */
+.sec{padding-block:var(--rhythm)}
+.sec .wrap{position:relative;z-index:1}
+.split{
+  display:grid;
+  grid-template-columns:minmax(0,1.55fr) minmax(0,0.85fr);
+  gap:clamp(40px,7vw,110px);
+  align-items:start;
+}
+.rail{border-top:1px solid var(--border);padding-top:26px}
+.rail h3{
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:16px;
+}
+.rail ul{margin-bottom:34px}
+.rail ul:last-child{margin-bottom:0}
+.rail li{
+  font-size:14.5px;line-height:1.65;color:#DCD6CB;
+  padding:9px 0;border-bottom:1px solid var(--border);
+}
+.rail li:last-child{border-bottom:0}
+.rail li .en{font-family:var(--serif);font-size:16px;color:var(--muted);letter-spacing:0.01em}
+.rail li .yr{
+  font-family:var(--mono);font-size:11px;letter-spacing:0.12em;
+  color:var(--muted);display:block;margin-top:2px;
+}
+/* photographic figures — one shared treatment so the page reads as one roll of film */
+.fig{margin:0}
+.fig img{
+  display:block;width:100%;object-fit:cover;
+  border:1px solid var(--border);
+  filter:saturate(0.86) contrast(1.04) brightness(0.9);
+}
+.fig figcaption{
+  margin-top:13px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);
+}
+.rail-fig{margin-bottom:32px}
+.rail-fig img{aspect-ratio:1/1}
+.res-fig{max-width:600px;margin-top:clamp(30px,4vw,44px)}
+.res-fig img{aspect-ratio:16/10}
+
+/* ─────────────────────────────────────────────
+   IV. Full-bleed quote
+   ───────────────────────────────────────────── */
+.quote-sec{background:var(--bg-deep);padding-block:var(--rhythm)}
+.pull p{
+  font-family:var(--serif-tc);
+  font-weight:300;
+  font-size:clamp(26px,4.4vw,52px);
+  line-height:1.42;
+  letter-spacing:-0.015em;
+  text-indent:-0.62em;
+  /* em resolves against this element's own display size, not the 17px parent */
+  max-width:14em;
+}
+.pull .qm{color:var(--accent)}
+.pull figcaption{
+  margin-top:clamp(26px,4vw,42px);
+  font-family:var(--mono);font-size:11px;font-weight:400;
+  letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);
+}
+
+/* ─────────────────────────────────────────────
+   V. Services — uneven bento
+   ───────────────────────────────────────────── */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.tile{background:var(--bg);padding:clamp(26px,3.2vw,40px);display:flex;flex-direction:column;transition:background 320ms var(--ease)}
+.tile:hover{background:var(--surface)}
+.tile--a{grid-column:span 7}
+.tile--b{grid-column:span 5}
+.tile--c{grid-column:span 5}
+.tile--d{grid-column:span 7}
+.tile--img{padding:0;background:var(--bg-deep)}
+.tile--img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.tile-idx{
+  font-family:var(--mono);font-size:11px;font-weight:400;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:18px;
+}
+.tile h3{margin-bottom:12px}
+.tile p{color:var(--muted);font-size:15px;line-height:1.75;max-width:34em}
+.tile blockquote{
+  margin-top:18px;padding-left:16px;border-left:1px solid var(--border-hi);
+  font-family:var(--serif-tc);font-weight:300;font-size:16px;line-height:1.8;color:#DCD6CB;
+}
+.tile blockquote cite{
+  display:block;margin-top:9px;font-style:normal;
+  font-family:var(--mono);font-size:10px;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--muted);
+}
+.sec-note{margin-top:26px;color:var(--muted);font-size:14px;max-width:38em}
+
+/* ─────────────────────────────────────────────
+   VI. Results — programme-note log list
+   ───────────────────────────────────────────── */
+.log{border-top:1px solid var(--border);margin-top:clamp(30px,4vw,44px)}
+.log li{
+  display:grid;
+  grid-template-columns:132px minmax(0,1fr) auto;
+  gap:clamp(14px,2.4vw,32px);
+  align-items:baseline;
+  padding:19px 0;
+  border-bottom:1px solid var(--border);
+}
+.log .yr{
+  font-family:var(--mono);font-size:11.5px;font-weight:400;
+  letter-spacing:0.11em;text-transform:uppercase;color:var(--muted);
+}
+.log .who{font-size:15.5px;line-height:1.6;color:#DCD6CB}
+.log .who em{font-style:normal;color:var(--muted);display:block;font-size:13.5px;margin-top:3px}
+.log .res{
+  font-family:var(--serif-tc);font-weight:400;font-size:17px;
+  letter-spacing:0.01em;color:var(--fg);white-space:nowrap;
+}
+
+/* ─────────────────────────────────────────────
+   VII. Vision
+   ───────────────────────────────────────────── */
+.vision{background:var(--bg-deep);padding-block:var(--rhythm)}
+.vision .rule{width:52px;height:1px;background:var(--accent);margin-bottom:26px}
+.vision-grid{
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr);
+  gap:clamp(40px,6vw,88px);align-items:start;
+}
+.vision figure{margin:0}
+.vision figure img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;
+  border:1px solid var(--border);
+  filter:saturate(0.82) contrast(1.04) brightness(0.88);
+}
+.vision figcaption{
+  margin-top:14px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);
+}
+.vision-quotes{margin-top:clamp(30px,4vw,42px);display:grid;gap:20px;max-width:38em}
+.vision-quotes blockquote{
+  font-family:var(--serif-tc);font-weight:300;font-size:18px;line-height:1.8;
+  color:#DCD6CB;padding-left:20px;border-left:1px solid var(--border-hi);
+}
+.invite{
+  margin-top:clamp(34px,5vw,54px);
+  padding-top:30px;border-top:1px solid var(--border);
+  max-width:38em;
+}
+.invite p{color:#DCD6CB}
+
+/* ─────────────────────────────────────────────
+   VIII. Lineage
+   ───────────────────────────────────────────── */
+.names{
+  display:flex;flex-wrap:wrap;
+  column-gap:clamp(22px,3.4vw,46px);row-gap:14px;
+  align-items:baseline;
+  max-width:44em;
+}
+.names li{
+  font-family:var(--serif-tc);font-weight:300;
+  font-size:clamp(20px,2.8vw,30px);
+  letter-spacing:0.01em;color:var(--fg);
+}
+.names li.lat{font-family:var(--serif);letter-spacing:-0.005em}
+.lineage-quote{
+  margin-top:clamp(38px,5vw,58px);
+  padding-top:30px;border-top:1px solid var(--border);
+  max-width:38em;
+}
+.lineage-quote blockquote{
+  font-family:var(--serif-tc);font-weight:300;font-size:19px;line-height:1.85;color:#DCD6CB;
+}
+.lineage-quote cite{
+  display:block;margin-top:14px;font-style:normal;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--muted);
+}
+
+/* ─────────────────────────────────────────────
+   Coda — contact
+   ───────────────────────────────────────────── */
+.coda{padding-block:var(--rhythm)}
+.coda-grid{
+  display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);
+  gap:clamp(40px,6vw,96px);align-items:start;
+}
+.channels{border-top:1px solid var(--border)}
+.channels li{
+  display:flex;justify-content:space-between;align-items:baseline;gap:20px;
+  padding:18px 0;border-bottom:1px solid var(--border);
+}
+.channels dt,.ch-label{
+  font-family:var(--mono);font-size:11px;font-weight:400;
+  letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);
+}
+.ch-val{font-size:15px;color:var(--fg);text-align:right}
+.ch-val a{text-decoration:none;border-bottom:1px solid var(--border-hi);padding-bottom:2px;transition:border-color 240ms var(--ease)}
+.ch-val a:hover{border-color:var(--fg)}
+.ch-tbd{color:var(--muted);font-family:var(--sans);font-size:14px}
+.coda-note{margin-top:24px;color:var(--muted);font-size:13.5px;line-height:1.7;max-width:34em}
+
+/* ─────────────────────────────────────────────
+   Footer
+   ───────────────────────────────────────────── */
+.site-foot{border-top:1px solid var(--border);background:var(--bg-deep)}
+.site-foot .wrap{padding-block:38px}
+.foot-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.foot-in p{font-family:var(--mono);font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}
+.foot-in p .tc{font-family:var(--sans);letter-spacing:0.06em;text-transform:none}
+
+/* ─────────────────────────────────────────────
+   Scroll-entry motion
+   ───────────────────────────────────────────── */
+/* Only hide-then-reveal when JS is present; without JS everything stays visible. */
+.js .rise{opacity:0;transform:translateY(14px)}
+.rise.in{
+  opacity:1;transform:none;
+  transition:opacity 700ms var(--ease),transform 700ms var(--ease);
+  transition-delay:calc(var(--i,0) * 70ms);
+}
+
+/* ─────────────────────────────────────────────
+   Responsive
+   ───────────────────────────────────────────── */
+@media (max-width:900px){
+  .split,.vision-grid,.coda-grid{grid-template-columns:1fr;gap:clamp(34px,7vw,52px)}
+  .tile--a,.tile--b,.tile--c,.tile--d{grid-column:span 12}
+  .tile--img img{aspect-ratio:16/9}
+}
+@media (max-width:760px){
+  .bar-grid{grid-template-columns:1fr}
+  .site-nav .nav-hide{display:none}
+  .log li{grid-template-columns:1fr;gap:6px;padding:17px 0}
+  .log .res{white-space:normal}
+  .ghost{font-size:clamp(180px,54vw,320px)}
+}
+@media (max-width:640px){
+  .nb{display:none}
+}
+@media (max-width:420px){
+  body{font-size:16px}
+  .head-in{height:56px}
+  .wordmark span{display:none}
+  .cta{--pad:20px;font-size:15px;width:100%;justify-content:space-between}
+  .hero-actions{gap:18px}
+}
+
+/* ─────────────────────────────────────────────
+   Reduced motion — full branch
+   ───────────────────────────────────────────── */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:0.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:0.001ms !important;
+    transition-delay:0ms !important;
+    scroll-behavior:auto !important;
+  }
+  .rise,.js .rise{opacity:1;transform:none}
+  .lit,.lit-2,.lit-3,.lit-4{animation:none;opacity:1;transform:none;filter:none}
+  .cta::after{transform:scaleX(0)}
+  .cta:hover::after,.cta:focus-visible::after{transform:scaleX(1)}
+  .cta:hover,.cta:focus-visible{transform:none}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">跳到主要內容</a>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="wordmark" href="#top">
+      <b>楊尚儒</b>
+      <span>Shang-Ju Yang, D.M.A.</span>
+    </a>
+    <nav class="site-nav" aria-label="主要導覽">
+      <ul>
+        <li class="nav-hide"><a href="#biography" data-nav>III. 自述</a></li>
+        <li class="nav-hide"><a href="#services" data-nav>V. 邀約項目</a></li>
+        <li class="nav-hide"><a href="#results" data-nav>VI. 育才</a></li>
+        <li class="nav-hide"><a href="#vision" data-nav>VII. 願景</a></li>
+        <li><a class="nav-cta" href="#coda" data-nav>邀約洽談</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ═══ I. Overture ═══ -->
+  <section class="hero" id="top" data-od-id="overture" aria-labelledby="hero-name">
+    <div class="hero-media">
+      <img src="assets/hero-stage.jpg" width="1600" height="900" decoding="async"
+           alt="暗場舞台的木質地板上，一把小提琴與一把琴弓並排靜置，一道暖色側光自左上方斜落，其餘沒入黑暗。">
+    </div>
+    <figure class="hero-figure">
+      <img src="assets/portrait.png" width="373" height="625" decoding="async"
+           alt="楊尚儒的正式肖像：戴細框眼鏡、身著深藍灰西裝，雙手交握於身前，面向鏡頭微笑，身影自下襬沒入暗場。">
+    </figure>
+    <div class="wrap">
+      <p class="hero-eyebrow lit">
+        <span class="mv-num">I. Overture</span>
+        <span class="mv-tempo">Adagio maestoso</span>
+      </p>
+      <h1 id="hero-name" class="lit">楊尚儒</h1>
+      <p class="hero-latin lit-2">Shang-Ju Yang — Violin &amp; Viola — D.M.A.</p>
+      <p class="hero-roles lit-3">小提琴・中提琴演奏者｜弦樂教育者｜台南</p>
+      <p class="hero-line lit-3">
+        從美國西南部的琴房回到台南的排練室。他坐過美國與台灣樂團最前面的那個位置；現在，他想把整支樂團當作一件作品來寫。
+      </p>
+      <p class="hero-actions lit-4">
+        <a class="cta" href="#coda" data-nav>邀約洽談<span class="arw" aria-hidden="true">→</span></a>
+        <a class="link-quiet" href="#vision" data-nav>先看他想成立的樂團</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ II. Positioning bar ═══ -->
+  <section class="bar" data-od-id="credentials" aria-label="關鍵經歷">
+    <div class="wrap">
+      <dl class="bar-grid rise">
+        <div class="bar-cell">
+          <dt>D.M.A. 2013</dt>
+          <dd><span class="en">University of Arizona</span><br>美國亞利桑那大學 音樂藝術博士</dd>
+        </div>
+        <div class="bar-cell">
+          <dt>Concertmaster 2012–2019</dt>
+          <dd><span class="en">Art Concert Orchestra</span><br>藝曲愛樂管弦樂團 首席</dd>
+        </div>
+        <div class="bar-cell">
+          <dt>Assoc. Concertmaster 2005–2007</dt>
+          <dd><span class="en">Sierra Vista Symphony Orchestra</span><br>美國謝拉維斯塔交響樂團 協理首席</dd>
+        </div>
+      </dl>
+      <p class="bar-note rise">現任中信金融管理學院（CTBC Business School）專任助理教授。</p>
+    </div>
+  </section>
+
+  <div class="staff" role="presentation"></div>
+
+  <!-- ═══ III. Biography ═══ -->
+  <section class="sec" id="biography" data-od-id="biography" aria-labelledby="bio-h">
+    <span class="ghost ghost--r" aria-hidden="true">III</span>
+    <div class="wrap">
+      <p class="movement rise">
+        <span class="mv-num">III. Biografia</span>
+        <span class="mv-tempo">Andante cantabile</span>
+      </p>
+      <div class="split">
+        <div class="prose rise">
+          <h2 id="bio-h">從台南出發，繞過亞利桑那，<br class="nb">再走回台南</h2>
+          <p>
+            他的訓練始於台灣，完成於美國西南部。在田納西大學（The University of Tennessee）取得音樂碩士之後，他於亞利桑那大學（University of Arizona）完成音樂藝術博士學位，二〇一三年。一路上教過他的老師，列在本頁第八樂章。
+          </p>
+          <p>
+            學位之外，真正養成他的是樂團裡的座位。二〇〇五到二〇〇七年，他在美國謝拉維斯塔交響樂團（Sierra Vista Symphony Orchestra）擔任<strong>協理首席</strong>。那個位置學的不只是拉好自己的分譜，而是怎麼讓一整個聲部呼吸一致——弓在哪裡起、句子在哪裡收、當指揮沒說話的時候，誰負責把話說完。
+          </p>
+          <p>
+            返台之後，他受邀擔任藝曲愛樂管弦樂團首席，從二〇一二年到二〇一九年，整整七年，樂團定期舉辦音樂會。七年是一段夠長的時間，長到足以看清一支樂團是怎麼被組起來的：人怎麼找、聲部怎麼分、曲目怎麼挑、排練的時間怎麼花才不浪費。
+          </p>
+          <p>
+            如今他把力氣放在台南——在中信金融管理學院任專任助理教授，同時擔任中信室內樂團／中信樂團師資、大宸室內樂團指導教授、龍門樂集青少年樂團（LSO）小提琴主修師資；二〇二〇年起，他在博森國際外語藝術學院開設「兒童少年室內樂團」，帶著孩子從第一次合奏開始練起。他也經常受邀擔任各大音樂比賽評審。
+          </p>
+        </div>
+
+        <aside class="rail rise" style="--i:1" aria-label="學經歷摘要">
+          <figure class="fig rail-fig">
+            <img src="assets/playing.jpg" width="820" height="808" loading="lazy" decoding="async"
+                 alt="楊尚儒側身持琴演奏：左手按弦於指板，右手運弓橫過琴弦，目光低垂看著琴身，身穿米色外套。">
+            <figcaption>At the instrument — 手上的判斷</figcaption>
+          </figure>
+
+          <h3>Education</h3>
+          <ul>
+            <li><span class="en">University of Arizona</span><br>音樂藝術博士 D.M.A.<span class="yr">2013</span></li>
+            <li><span class="en">The University of Tennessee</span><br>音樂碩士 M.M.</li>
+          </ul>
+
+          <h3>Appointments</h3>
+          <ul>
+            <li>中信金融管理學院 專任助理教授<span class="yr">CTBC Business School</span></li>
+            <li>中信室內樂團／中信樂團 師資</li>
+            <li>大宸室內樂團 指導教授</li>
+            <li>龍門樂集青少年樂團 小提琴主修師資<span class="yr">Lung String Orchestra, LSO</span></li>
+            <li>博森國際外語藝術學院 兒童少年室內樂團<span class="yr">Bosen International Academy — 2020–</span></li>
+            <li>各大音樂比賽 評審</li>
+          </ul>
+
+          <h3>Orchestral</h3>
+          <ul>
+            <li>藝曲愛樂管弦樂團 首席<span class="yr">Art Concert Orchestra — 2012–2019</span></li>
+            <li>謝拉維斯塔交響樂團 協理首席<span class="yr">Sierra Vista Symphony Orchestra — 2005–2007</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <div class="staff" role="presentation"></div>
+
+  <!-- ═══ IV. Quote ═══ -->
+  <section class="quote-sec" data-od-id="credo" aria-labelledby="credo-h">
+    <span class="ghost ghost--l" aria-hidden="true">IV</span>
+    <div class="wrap">
+      <p class="movement rise">
+        <span class="mv-num">IV. Credo</span>
+        <span class="mv-tempo">Largo, sotto voce</span>
+      </p>
+      <h2 id="credo-h" class="mono rise" style="color:var(--muted);font-size:12px;letter-spacing:0.14em;margin-bottom:26px">教學理念</h2>
+      <figure class="pull rise" style="--i:1">
+        <p><span class="qm" aria-hidden="true">「</span>音樂不該是滿足家長虛榮心的產物，她應該是一個純粹的『美』。」</p>
+        <figcaption>楊尚儒 — Bosen 專訪</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="staff" role="presentation"></div>
+
+  <!-- ═══ V. Services ═══ -->
+  <section class="sec" id="services" data-od-id="services" aria-labelledby="svc-h">
+    <span class="ghost ghost--r" aria-hidden="true">V</span>
+    <div class="wrap">
+      <p class="movement rise">
+        <span class="mv-num">V. Repertorio</span>
+        <span class="mv-tempo">Allegro con brio</span>
+      </p>
+      <h2 id="svc-h" class="rise">可以邀請他做的事</h2>
+      <div class="prose rise" style="--i:1">
+        <p>
+          以下是他長期在做、也願意接受洽談的工作。形式與規模可以談，但方向很一致：把一群人變成一個能一起演奏的整體。
+        </p>
+      </div>
+
+      <div class="bento rise" style="--i:2;margin-top:clamp(34px,4.5vw,52px)">
+        <article class="tile tile--a">
+          <p class="tile-idx">No. 01</p>
+          <h3>樂團與室內樂的組建、訓練</h3>
+          <p>
+            學校弦樂團、機構常設樂團、青少年樂團、兒少室內樂團——從編制與選曲、分部訓練、到合奏與音樂會。二〇二〇年起他在博森國際外語藝術學院開設兒童少年室內樂團，也擔任大宸室內樂團指導教授，走的正是這條從零到台上的路。
+          </p>
+        </article>
+
+        <article class="tile tile--b tile--img">
+          <img src="assets/ctbc-concert.jpg" width="900" height="493" loading="lazy" decoding="async"
+               alt="音樂會現場：楊尚儒手持小提琴與琴弓面向鏡頭，身旁是一名戴學士帽的學生，背後是中信金融管理學院的舞台看板與就座中的樂團。">
+        </article>
+
+        <article class="tile tile--c">
+          <p class="tile-idx">No. 02</p>
+          <h3>小提琴・中提琴主修個別指導</h3>
+          <p>從初學的音感與節奏，到主修程度的曲目與比賽準備。</p>
+          <blockquote>
+            「小提琴初學很難，要訓練好音感及節奏，準備期很長，這時就會需要孩子有良好的專注力。」
+            <cite>楊尚儒 — Bosen 專訪</cite>
+          </blockquote>
+        </article>
+
+        <article class="tile tile--d">
+          <p class="tile-idx">No. 03 — 04</p>
+          <h3>比賽評審、講座；演出邀約</h3>
+          <p>
+            他經常受邀擔任各大音樂比賽評審，可就評分、曲目與訓練方向與主辦方交換意見。亦接受小提琴／中提琴的獨奏與室內樂演出邀約，以及面向教師、家長或學生的講座洽談。
+          </p>
+        </article>
+      </div>
+      <p class="sec-note rise" style="--i:3">
+        檔期、酬勞與合作形式請直接洽談；聯絡方式見文末〈Coda〉。
+      </p>
+    </div>
+  </section>
+
+  <div class="staff" role="presentation"></div>
+
+  <!-- ═══ VI. Results ═══ -->
+  <section class="sec" id="results" data-od-id="results" aria-labelledby="res-h">
+    <span class="ghost ghost--l" aria-hidden="true">VI</span>
+    <div class="wrap">
+      <p class="movement rise">
+        <span class="mv-num">VI. Allievi</span>
+        <span class="mv-tempo">Allegretto grazioso</span>
+      </p>
+      <h2 id="res-h" class="rise">他教出來的學生與團隊</h2>
+      <div class="prose rise" style="--i:1">
+        <p>
+          他希望教出獨立思考、願意把自己的音樂想法說出來的孩子——「自己去感受任何事物帶來的好與壞，沒有絕對的答案，不用怕出錯，不用怕踏出去。」名次不是目的，但它至少誠實地說明了訓練的密度。以下皆為公開資料。
+        </p>
+      </div>
+
+      <figure class="fig res-fig rise" style="--i:2">
+        <img src="assets/students-award.jpg" width="880" height="542" loading="lazy" decoding="async"
+             alt="音樂比賽會場的紅色主視覺牆前，五名學生分別捧著獎盃與獎狀站成一排，楊尚儒站在中間。">
+        <figcaption>賽後 — 學生與他們自己拿到的獎盃</figcaption>
+      </figure>
+
+      <ul class="log rise" style="--i:3">
+        <li>
+          <span class="yr">107 學年度</span>
+          <span class="who">龍門樂集青少年樂團<em>全國學生音樂比賽 弦樂合奏 國中團體B組</em></span>
+          <span class="res">優等</span>
+        </li>
+        <li>
+          <span class="yr">108 學年度</span>
+          <span class="who">龍門樂集青少年樂團<em>全國學生音樂比賽 弦樂合奏 國中團體B組</em></span>
+          <span class="res">優等</span>
+        </li>
+        <li>
+          <span class="yr">109 學年度</span>
+          <span class="who">龍門樂集青少年樂團<em>全國學生音樂比賽 弦樂合奏 國中團體B組</em></span>
+          <span class="res">特優</span>
+        </li>
+        <li>
+          <span class="yr">2020</span>
+          <span class="who">大宸室內樂團「尚宸豐雅隊」<em>大台南國際音樂大賽 國小齊奏四人團體組</em></span>
+          <span class="res">優等第二名</span>
+        </li>
+        <li>
+          <span class="yr">2022</span>
+          <span class="who">主修學生<em>衛武營全國音樂大賽 小提琴 國中組</em></span>
+          <span class="res">第一名</span>
+        </li>
+        <li>
+          <span class="yr">2023</span>
+          <span class="who">主修學生<em>台南市音樂比賽 小提琴 國小音樂班組</em></span>
+          <span class="res">第四名</span>
+        </li>
+        <li>
+          <span class="yr">2024</span>
+          <span class="who">主修學生<em>全國學生音樂比賽（決賽）小提琴 國中B組</em></span>
+          <span class="res">第六名</span>
+        </li>
+      </ul>
+      <p class="sec-note rise" style="--i:4">
+        龍門樂集青少年樂團另多次取得全國決賽參賽資格。
+      </p>
+    </div>
+  </section>
+
+  <div class="staff" role="presentation"></div>
+
+  <!-- ═══ VII. Vision ═══ -->
+  <section class="vision" id="vision" data-od-id="vision" aria-labelledby="vis-h">
+    <span class="ghost ghost--rb" aria-hidden="true">VII</span>
+    <div class="wrap">
+      <p class="movement rise">
+        <span class="mv-num">VII. Visione</span>
+        <span class="mv-tempo">Maestoso</span>
+      </p>
+      <div class="vision-grid">
+        <div class="rise">
+          <div class="rule" aria-hidden="true"></div>
+          <h2 id="vis-h">下一個樂章：<br class="nb">一支自己的樂團，<br class="nb">和一根指揮棒。</h2>
+          <div class="prose">
+            <p>
+              他的志向說得很直接：成立自己的樂團，並走上指揮台，成為一位指揮家。
+            </p>
+            <p>
+              對一個長年坐在首席位置上的人來說，這不是浪漫的轉行，而是把已經在做的事再往前一步。首席的工作本來就包含判斷句法、統一弓法、在排練裡替一整個聲部做決定；指揮只是把這個判斷的範圍，從弦樂擴大到整個編制。
+            </p>
+            <p>
+              而他想做的曲目，不只在西方傳統的範圍裡。在二〇二五年的一次訪談中，他談到東方樂器與西方編制的相遇——那不是一種點綴，而是他認為值得認真寫下去的方向。
+            </p>
+          </div>
+          <div class="vision-quotes">
+            <blockquote>「東西方的樂器各有長處……這樣的融合給我帶來很多未來可能創作上面的啟發。」</blockquote>
+            <blockquote>「中華傳統音樂是屬於我們的寶藏，這個部分可以開發成很好的一種音樂元素，特別在音樂創作上面。」</blockquote>
+          </div>
+        </div>
+
+        <figure class="rise" style="--i:1">
+          <img src="assets/score-baton.jpg" width="1440" height="1080" loading="lazy" decoding="async"
+               alt="一根深色木柄的指揮棒斜放在一疊泛黃的手寫總譜上，紙面留有鉛筆註記。">
+          <figcaption>Score &amp; Baton — 待寫的第一場節目單</figcaption>
+        </figure>
+      </div>
+
+      <div class="invite rise" style="--i:2">
+        <div class="prose">
+          <p>
+            如果貴單位正在想這件事——學校要成立弦樂團、機構要辦一支常設樂團、地方要培養自己的青少年樂團，或是一場需要從無到有編制起來的音樂會——那麼這裡有一個人已經準備好從第一次排練站到台上。
+          </p>
+          <p>
+            第一場音樂會的曲目還沒定，團員名單也還空著。這兩件事，都可以一起決定。
+          </p>
+        </div>
+        <p style="margin-top:30px">
+          <a class="cta" href="#coda" data-nav>談談你想成立的樂團<span class="arw" aria-hidden="true">→</span></a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="staff" role="presentation"></div>
+
+  <!-- ═══ VIII. Lineage ═══ -->
+  <section class="sec" data-od-id="lineage" aria-labelledby="lin-h">
+    <span class="ghost ghost--r" aria-hidden="true">VIII</span>
+    <div class="wrap">
+      <p class="movement rise">
+        <span class="mv-num">VIII. Maestri</span>
+        <span class="mv-tempo">Andante sostenuto</span>
+      </p>
+      <h2 id="lin-h" class="rise">師承</h2>
+      <ul class="names rise" style="--i:1">
+        <li>顏丁科</li>
+        <li>張文賢</li>
+        <li>陳宗成</li>
+        <li class="lat">William Goodwin</li>
+        <li class="lat">Mark Zelmanovich</li>
+        <li class="lat">Hong Mei Xiao</li>
+        <li class="lat">Yuko Suzuki</li>
+        <li class="lat">Hiroko Masaoka</li>
+      </ul>
+      <div class="lineage-quote rise" style="--i:2">
+        <blockquote>
+          「我們應該傳承幾世紀以來的心靈活動——從音樂裡得到感動，讓音樂在孩子需要時可以療癒他，強壯他。」
+        </blockquote>
+        <cite>楊尚儒 — Bosen 專訪</cite>
+      </div>
+    </div>
+  </section>
+
+  <div class="staff" role="presentation"></div>
+
+  <!-- ═══ Coda ═══ -->
+  <section class="coda" id="coda" data-od-id="coda" aria-labelledby="coda-h">
+    <span class="ghost ghost--l" aria-hidden="true">Coda</span>
+    <div class="wrap">
+      <p class="movement rise">
+        <span class="mv-num">Coda</span>
+        <span class="mv-tempo">attacca</span>
+      </p>
+      <div class="coda-grid">
+        <div class="rise">
+          <h2 id="coda-h">邀約洽談</h2>
+          <div class="prose">
+            <p>
+              樂團組建與訓練、師資駐點、個別指導、比賽評審、講座、演出——都歡迎直接來訊，說明貴單位的狀況、編制與希望的時間。
+            </p>
+          </div>
+          <p style="margin-top:clamp(28px,4vw,40px)">
+            <a class="cta" href="https://www.facebook.com/yangfengju" target="_blank" rel="noopener noreferrer">
+              透過 Facebook 來訊<span class="arw" aria-hidden="true">↗</span>
+            </a>
+          </p>
+        </div>
+
+        <div class="rise" style="--i:1">
+          <ul class="channels" aria-label="聯絡管道">
+            <li>
+              <span class="ch-label">Facebook</span>
+              <span class="ch-val">
+                <a href="https://www.facebook.com/yangfengju" target="_blank" rel="noopener noreferrer">
+                  facebook.com/yangfengju
+                </a>
+              </span>
+            </li>
+            <li>
+              <span class="ch-label">Email</span>
+              <span class="ch-val ch-tbd">聯絡信箱｜待補</span>
+            </li>
+            <li>
+              <span class="ch-label">Tel</span>
+              <span class="ch-val ch-tbd">聯絡電話｜待補</span>
+            </li>
+            <li>
+              <span class="ch-label">Network</span>
+              <span class="ch-val">BNI 大台南南區・真鑽分會</span>
+            </li>
+            <li>
+              <span class="ch-label">Based in</span>
+              <span class="ch-val">台南 Tainan, Taiwan</span>
+            </li>
+          </ul>
+          <p class="coda-note">
+            他同時是 BNI 大台南南區真鑽分會的成員；若你們在分會裡碰得到面，當面把需求說清楚，會比任何介紹信都快。目前對外公開的線上聯絡管道僅有 Facebook，電子信箱與電話待本人提供後補上，在此之前不列出任何未經確認的號碼或地址。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="staff" style="width:100%;margin-bottom:26px" role="presentation"></div>
+    <div class="foot-in">
+      <p>楊尚儒 — Shang-Ju Yang, D.M.A. — Violin &amp; Viola</p>
+      <p><span class="tc">本站內容整理自公開資料；未列出之數據一律從缺。</span></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* ── Scroll-entry animation ───────────────── */
+  var rises = document.querySelectorAll('.rise');
+
+  if (reduce.matches || !('IntersectionObserver' in window)) {
+    rises.forEach(function (el) { el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+    rises.forEach(function (el) { io.observe(el); });
+  }
+
+  /* If the user switches to reduced motion mid-session, reveal everything. */
+  var onChange = function () {
+    if (reduce.matches) {
+      rises.forEach(function (el) { el.classList.add('in'); });
+    }
+  };
+  if (reduce.addEventListener) { reduce.addEventListener('change', onChange); }
+  else if (reduce.addListener) { reduce.addListener(onChange); }
+
+  /* ── Nav anchors ──────────────────────────────
+     Real <a href="#id"> links work with JS off; this only
+     smooths the jump and offsets the sticky header. */
+  var head = document.querySelector('.site-head');
+
+  document.querySelectorAll('a[data-nav]').forEach(function (link) {
+    link.addEventListener('click', function (ev) {
+      if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey || ev.button !== 0) return;
+
+      var id = link.getAttribute('href');
+      if (!id || id.charAt(0) !== '#' || id.length < 2) return;
+
+      var target = document.getElementById(id.slice(1));
+      if (!target) return;
+
+      ev.preventDefault();
+
+      var offset = head ? head.getBoundingClientRect().height : 0;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - offset - 8;
+
+      window.scrollTo({
+        top: Math.max(0, top),
+        behavior: reduce.matches ? 'auto' : 'smooth'
+      });
+
+      /* Keep the keyboard where the eye went. */
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+
+      if (history.replaceState) history.replaceState(null, '', id);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
