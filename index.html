@@ -19,15 +19,15 @@
    Tokens
    ───────────────────────────────────────────── */
 :root{
-  --bg:#0E0F11;
-  --bg-deep:#08090A;
-  --surface:#16171A;
-  --fg:#EDE8DF;
-  --muted:#9A968D;
-  --border:rgba(237,232,223,0.10);
-  --border-hi:rgba(237,232,223,0.22);
-  --accent:#C8A253;
-  --accent-dim:#8C7237;
+  --bg:#2B1A12;
+  --bg-deep:#1E120C;
+  --surface:#3A2418;
+  --fg:#F4E6CE;
+  --muted:#BFA787;
+  --border:rgba(244,230,206,0.10);
+  --border-hi:rgba(244,230,206,0.22);
+  --accent:#D9A05B;
+  --accent-dim:#A56A32;
 
   --serif:'Cormorant Garamond','Noto Serif TC',Georgia,'Times New Roman',serif;
   --serif-tc:'Noto Serif TC','Cormorant Garamond',Georgia,serif;
@@ -50,7 +50,7 @@ body{
   background:var(--bg);
   color:var(--fg);
   font-family:var(--sans);
-  font-size:17px;
+  font-size:18px;
   font-weight:400;
   line-height:1.75;
   letter-spacing:0.01em;
@@ -71,13 +71,13 @@ a{color:inherit}
 }
 a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 
-::selection{background:rgba(200,162,83,0.28);color:var(--fg)}
+::selection{background:rgba(217,160,91,0.28);color:var(--fg)}
 
 .skip{
   position:absolute;left:var(--gutter);top:-100px;z-index:200;
   background:var(--surface);color:var(--fg);
   padding:12px 18px;border:1px solid var(--border-hi);
-  font-family:var(--mono);font-size:12px;
+  font-family:var(--mono);font-size:18px;
   transition:top 180ms var(--ease);
 }
 .skip:focus{top:14px}
@@ -94,7 +94,7 @@ section{position:relative;overflow:hidden;overflow:clip}
 
 .mono{
   font-family:var(--mono);
-  font-size:12px;
+  font-size:18px;
   font-weight:400;
   line-height:1.6;
   letter-spacing:0.14em;
@@ -111,7 +111,7 @@ section{position:relative;overflow:hidden;overflow:clip}
 }
 .mv-num{
   font-family:var(--mono);
-  font-size:12px;font-weight:500;
+  font-size:18px;font-weight:500;
   letter-spacing:0.14em;
   text-transform:uppercase;
   color:var(--fg);
@@ -134,7 +134,7 @@ section{position:relative;overflow:hidden;overflow:clip}
   font-size:clamp(230px,40vw,600px);
   line-height:0.72;
   letter-spacing:-0.03em;
-  color:rgba(237,232,223,0.035);
+  color:rgba(244,230,206,0.035);
   pointer-events:none;
   user-select:none;
   white-space:nowrap;
@@ -159,7 +159,7 @@ section{position:relative;overflow:hidden;overflow:clip}
 }
 
 .prose{max-width:38em}
-.prose p{margin-bottom:1.35em;color:#DCD6CB;line-height:1.75}
+.prose p{margin-bottom:1.35em;color:#EBDCC0;line-height:1.75}
 .prose p:last-child{margin-bottom:0}
 .prose strong{font-weight:500;color:var(--fg)}
 
@@ -191,12 +191,12 @@ h3{
   color:var(--accent);
   background:transparent;
   font-family:var(--sans);
-  font-size:16px;font-weight:500;letter-spacing:0.05em;
+  font-size:18px;font-weight:500;letter-spacing:0.05em;
   text-decoration:none;
   transition:border-color 320ms var(--ease),transform 320ms var(--ease);
 }
 .cta .arw{
-  font-family:var(--mono);font-size:12px;letter-spacing:0.12em;
+  font-family:var(--mono);font-size:18px;letter-spacing:0.12em;
   transform:translateY(-1px);
 }
 .cta::after{
@@ -223,7 +223,7 @@ h3{
    ───────────────────────────────────────────── */
 .site-head{
   position:sticky;top:0;z-index:100;
-  background:rgba(14,15,17,0.78);
+  background:rgba(43,26,18,0.78);
   backdrop-filter:blur(14px) saturate(120%);
   -webkit-backdrop-filter:blur(14px) saturate(120%);
   border-bottom:1px solid var(--border);
@@ -238,12 +238,12 @@ h3{
 }
 .wordmark b{font-family:var(--serif-tc);font-weight:400;font-size:18px;letter-spacing:0.04em}
 .wordmark span{
-  font-family:var(--mono);font-size:10px;font-weight:400;
+  font-family:var(--mono);font-size:18px;font-weight:400;
   letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);
 }
 .site-nav ul{display:flex;align-items:center;gap:clamp(14px,2.2vw,30px)}
 .site-nav a{
-  font-family:var(--mono);font-size:11px;font-weight:400;
+  font-family:var(--mono);font-size:18px;font-weight:400;
   letter-spacing:0.14em;text-transform:uppercase;
   color:var(--muted);text-decoration:none;
   padding:6px 0;
@@ -276,8 +276,8 @@ h3{
 .hero-media::after{
   content:"";position:absolute;inset:0;
   background:
-    radial-gradient(120% 88% at 22% 72%,rgba(14,15,17,0.18) 0%,rgba(14,15,17,0.72) 52%,rgba(8,9,10,0.96) 100%),
-    linear-gradient(to top,rgba(8,9,10,0.97) 0%,rgba(14,15,17,0.55) 42%,rgba(14,15,17,0.62) 100%);
+    radial-gradient(120% 88% at 22% 72%,rgba(43,26,18,0.18) 0%,rgba(43,26,18,0.72) 52%,rgba(30,18,12,0.96) 100%),
+    linear-gradient(to top,rgba(30,18,12,0.97) 0%,rgba(43,26,18,0.55) 42%,rgba(43,26,18,0.62) 100%);
 }
 .hero .wrap{position:relative;z-index:1;width:100%}
 .hero-eyebrow{
@@ -295,7 +295,7 @@ h1{
 }
 .hero-latin{
   font-family:var(--mono);
-  font-size:clamp(11px,1.5vw,13px);
+  font-size:18px;
   font-weight:500;
   letter-spacing:0.14em;
   text-transform:uppercase;
@@ -305,16 +305,16 @@ h1{
 .hero-roles{
   font-family:var(--serif-tc);
   font-weight:300;
-  font-size:clamp(17px,2.3vw,23px);
+  font-size:clamp(18px,2.3vw,23px);
   line-height:1.6;
   letter-spacing:0.02em;
-  color:#DCD6CB;
+  color:#EBDCC0;
   margin-bottom:22px;
 }
 .hero-line{
   max-width:34em;
   color:var(--muted);
-  font-size:16px;
+  font-size:18px;
   margin-bottom:clamp(34px,5vh,52px);
 }
 .hero-actions{display:flex;align-items:center;gap:clamp(18px,3vw,34px);flex-wrap:wrap}
@@ -327,7 +327,7 @@ h1{
 }
 .hero-figure img{
   display:block;width:100%;height:auto;
-  filter:drop-shadow(0 26px 74px rgba(8,9,10,0.94)) saturate(0.92) contrast(1.03);
+  filter:drop-shadow(0 26px 74px rgba(30,18,12,0.94)) saturate(0.92) contrast(1.03);
 }
 /* tablet: keep him on stage, but clear a lane for the type */
 @media (max-width:1000px) and (min-width:701px){
@@ -358,14 +358,14 @@ h1{
 }
 .bar-cell{background:var(--bg-deep);padding:22px clamp(16px,2.2vw,28px)}
 .bar-cell dt{
-  font-family:var(--mono);font-size:11px;font-weight:500;
+  font-family:var(--mono);font-size:18px;font-weight:500;
   letter-spacing:0.14em;text-transform:uppercase;
   color:var(--fg);margin-bottom:9px;
 }
-.bar-cell dd{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
-.bar-cell dd .en{font-family:var(--serif);font-size:16px;letter-spacing:0.01em}
+.bar-cell dd{margin:0;color:var(--muted);font-size:18px;line-height:1.6}
+.bar-cell dd .en{font-family:var(--serif);font-size:18px;letter-spacing:0.01em}
 .bar-note{
-  margin-top:18px;color:var(--muted);font-size:13px;letter-spacing:0.02em;
+  margin-top:18px;color:var(--muted);font-size:18px;letter-spacing:0.02em;
 }
 
 /* ─────────────────────────────────────────────
@@ -381,20 +381,20 @@ h1{
 }
 .rail{border-top:1px solid var(--border);padding-top:26px}
 .rail h3{
-  font-family:var(--mono);font-size:11px;font-weight:500;
+  font-family:var(--mono);font-size:18px;font-weight:500;
   letter-spacing:0.14em;text-transform:uppercase;
   color:var(--muted);margin-bottom:16px;
 }
 .rail ul{margin-bottom:34px}
 .rail ul:last-child{margin-bottom:0}
 .rail li{
-  font-size:14.5px;line-height:1.65;color:#DCD6CB;
+  font-size:18px;line-height:1.65;color:#EBDCC0;
   padding:9px 0;border-bottom:1px solid var(--border);
 }
 .rail li:last-child{border-bottom:0}
-.rail li .en{font-family:var(--serif);font-size:16px;color:var(--muted);letter-spacing:0.01em}
+.rail li .en{font-family:var(--serif);font-size:18px;color:var(--muted);letter-spacing:0.01em}
 .rail li .yr{
-  font-family:var(--mono);font-size:11px;letter-spacing:0.12em;
+  font-family:var(--mono);font-size:18px;letter-spacing:0.12em;
   color:var(--muted);display:block;margin-top:2px;
 }
 /* photographic figures — one shared treatment so the page reads as one roll of film */
@@ -405,7 +405,7 @@ h1{
   filter:saturate(0.86) contrast(1.04) brightness(0.9);
 }
 .fig figcaption{
-  margin-top:13px;font-family:var(--mono);font-size:10.5px;
+  margin-top:13px;font-family:var(--mono);font-size:18px;
   letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);
 }
 .rail-fig{margin-bottom:32px}
@@ -430,7 +430,7 @@ h1{
 .pull .qm{color:var(--accent)}
 .pull figcaption{
   margin-top:clamp(26px,4vw,42px);
-  font-family:var(--mono);font-size:11px;font-weight:400;
+  font-family:var(--mono);font-size:18px;font-weight:400;
   letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);
 }
 
@@ -447,22 +447,22 @@ h1{
 .tile--img{padding:0;background:var(--bg-deep)}
 .tile--img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
 .tile-idx{
-  font-family:var(--mono);font-size:11px;font-weight:400;
+  font-family:var(--mono);font-size:18px;font-weight:400;
   letter-spacing:0.14em;text-transform:uppercase;
   color:var(--muted);margin-bottom:18px;
 }
 .tile h3{margin-bottom:12px}
-.tile p{color:var(--muted);font-size:15px;line-height:1.75;max-width:34em}
+.tile p{color:var(--muted);font-size:18px;line-height:1.75;max-width:34em}
 .tile blockquote{
   margin-top:18px;padding-left:16px;border-left:1px solid var(--border-hi);
-  font-family:var(--serif-tc);font-weight:300;font-size:16px;line-height:1.8;color:#DCD6CB;
+  font-family:var(--serif-tc);font-weight:300;font-size:18px;line-height:1.8;color:#EBDCC0;
 }
 .tile blockquote cite{
   display:block;margin-top:9px;font-style:normal;
-  font-family:var(--mono);font-size:10px;letter-spacing:0.14em;
+  font-family:var(--mono);font-size:18px;letter-spacing:0.14em;
   text-transform:uppercase;color:var(--muted);
 }
-.sec-note{margin-top:26px;color:var(--muted);font-size:14px;max-width:38em}
+.sec-note{margin-top:26px;color:var(--muted);font-size:18px;max-width:38em}
 
 /* ─────────────────────────────────────────────
    VI. Results — programme-note log list
@@ -477,13 +477,13 @@ h1{
   border-bottom:1px solid var(--border);
 }
 .log .yr{
-  font-family:var(--mono);font-size:11.5px;font-weight:400;
+  font-family:var(--mono);font-size:18px;font-weight:400;
   letter-spacing:0.11em;text-transform:uppercase;color:var(--muted);
 }
-.log .who{font-size:15.5px;line-height:1.6;color:#DCD6CB}
-.log .who em{font-style:normal;color:var(--muted);display:block;font-size:13.5px;margin-top:3px}
+.log .who{font-size:18px;line-height:1.6;color:#EBDCC0}
+.log .who em{font-style:normal;color:var(--muted);display:block;font-size:18px;margin-top:3px}
 .log .res{
-  font-family:var(--serif-tc);font-weight:400;font-size:17px;
+  font-family:var(--serif-tc);font-weight:400;font-size:18px;
   letter-spacing:0.01em;color:var(--fg);white-space:nowrap;
 }
 
@@ -503,20 +503,20 @@ h1{
   filter:saturate(0.82) contrast(1.04) brightness(0.88);
 }
 .vision figcaption{
-  margin-top:14px;font-family:var(--mono);font-size:10.5px;
+  margin-top:14px;font-family:var(--mono);font-size:18px;
   letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);
 }
 .vision-quotes{margin-top:clamp(30px,4vw,42px);display:grid;gap:20px;max-width:38em}
 .vision-quotes blockquote{
   font-family:var(--serif-tc);font-weight:300;font-size:18px;line-height:1.8;
-  color:#DCD6CB;padding-left:20px;border-left:1px solid var(--border-hi);
+  color:#EBDCC0;padding-left:20px;border-left:1px solid var(--border-hi);
 }
 .invite{
   margin-top:clamp(34px,5vw,54px);
   padding-top:30px;border-top:1px solid var(--border);
   max-width:38em;
 }
-.invite p{color:#DCD6CB}
+.invite p{color:#EBDCC0}
 
 /* ─────────────────────────────────────────────
    VIII. Lineage
@@ -539,11 +539,11 @@ h1{
   max-width:38em;
 }
 .lineage-quote blockquote{
-  font-family:var(--serif-tc);font-weight:300;font-size:19px;line-height:1.85;color:#DCD6CB;
+  font-family:var(--serif-tc);font-weight:300;font-size:19px;line-height:1.85;color:#EBDCC0;
 }
 .lineage-quote cite{
   display:block;margin-top:14px;font-style:normal;
-  font-family:var(--mono);font-size:10.5px;letter-spacing:0.14em;
+  font-family:var(--mono);font-size:18px;letter-spacing:0.14em;
   text-transform:uppercase;color:var(--muted);
 }
 
@@ -561,14 +561,14 @@ h1{
   padding:18px 0;border-bottom:1px solid var(--border);
 }
 .channels dt,.ch-label{
-  font-family:var(--mono);font-size:11px;font-weight:400;
+  font-family:var(--mono);font-size:18px;font-weight:400;
   letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);
 }
-.ch-val{font-size:15px;color:var(--fg);text-align:right}
+.ch-val{font-size:18px;color:var(--fg);text-align:right}
 .ch-val a{text-decoration:none;border-bottom:1px solid var(--border-hi);padding-bottom:2px;transition:border-color 240ms var(--ease)}
 .ch-val a:hover{border-color:var(--fg)}
-.ch-tbd{color:var(--muted);font-family:var(--sans);font-size:14px}
-.coda-note{margin-top:24px;color:var(--muted);font-size:13.5px;line-height:1.7;max-width:34em}
+.ch-tbd{color:var(--muted);font-family:var(--sans);font-size:18px}
+.coda-note{margin-top:24px;color:var(--muted);font-size:18px;line-height:1.7;max-width:34em}
 
 /* ─────────────────────────────────────────────
    Footer
@@ -576,7 +576,7 @@ h1{
 .site-foot{border-top:1px solid var(--border);background:var(--bg-deep)}
 .site-foot .wrap{padding-block:38px}
 .foot-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.foot-in p{font-family:var(--mono);font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}
+.foot-in p{font-family:var(--mono);font-size:18px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}
 .foot-in p .tc{font-family:var(--sans);letter-spacing:0.06em;text-transform:none}
 
 /* ─────────────────────────────────────────────
@@ -609,10 +609,10 @@ h1{
   .nb{display:none}
 }
 @media (max-width:420px){
-  body{font-size:16px}
+  body{font-size:18px}
   .head-in{height:56px}
   .wordmark span{display:none}
-  .cta{--pad:20px;font-size:15px;width:100%;justify-content:space-between}
+  .cta{--pad:20px;font-size:18px;width:100%;justify-content:space-between}
   .hero-actions{gap:18px}
 }
 
@@ -778,7 +778,7 @@ h1{
         <span class="mv-num">IV. Credo</span>
         <span class="mv-tempo">Largo, sotto voce</span>
       </p>
-      <h2 id="credo-h" class="mono rise" style="color:var(--muted);font-size:12px;letter-spacing:0.14em;margin-bottom:26px">教學理念</h2>
+      <h2 id="credo-h" class="mono rise" style="color:var(--muted);font-size:18px;letter-spacing:0.14em;margin-bottom:26px">教學理念</h2>
       <figure class="pull rise" style="--i:1">
         <p><span class="qm" aria-hidden="true">「</span>音樂不該是滿足家長虛榮心的產物，她應該是一個純粹的『美』。」</p>
         <figcaption>楊尚儒 — Bosen 專訪</figcaption>
